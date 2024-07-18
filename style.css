@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    font-family: system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial;
+    background-color: #333;
+    text-rendering: optimizeSpeed;
+}
+
+@keyframes bouncy {
+    0% {
+        transform: none;
+    }
+
+    20% {
+        transform: scaleY(0.8) scaleX(1.2);
+    }
+
+    50% {
+        transform: scaleY(1.1) scaleX(0.9);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+#buttonContainer {
+    background-color: #333;
+    display: flex;
+    padding: 3px;
+    width: calc(100% - 6px);
+    white-space: nowrap;
+    align-items: center;
+}
+
+#buttonContainer button {
+    border-radius: 8px;
+    background-color: #444;
+    color: #fff;
+    padding: 6px;
+    font-size: 19px;
+    border: 1px solid #fff;
+    transition: all 0.2s ease;
+    margin: 3px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#buttonContainer button i {
+    height: 20px;
+    width: 20px;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+#buttonContainer button:hover i {
+    height: 20px;
+    animation: normal 0.5s ease bouncy;
+}
+
+#buttonContainer button:hover {
+    background-color: #222;
+    border-radius: 4px;
+}
+
+#blocklyContainer {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+#blocklyDiv {
+    flex: 1;
+    height: 100%;
+}
+
+#blocklyPreviewDiv {
+    height: 200px;
+    background-color: #272727;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#generatedCodeBlockly {
+    width: 30%;
+    height: 100%;
+    font-family: monospace;
+    font-size: 12px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#textCode {
+    height: 350px;
+    white-space: pre;
+    overflow: auto;
+    background-color: #272727;
+    padding: 5px;
+}
+
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #cecece;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#generatedCodeBlockly select {
+    background-color: #444;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    transition: all 0.2s ease;
+    padding: 3px;
+}
+
+#generatedCodeBlockly select:hover {
+    background-color: #222;
+    border-radius: 3px;
+}
+
+#generatedCodeBlockly select:focus {
+    background-color: #222;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+
+#generatedCodeBlockly button {
+    background-color: #444;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#generatedCodeBlockly button:hover {
+    background-color: #222222;
+    border-radius: 3px;
+}
+
+#generatedCodeBlockly label {
+    font-size: 16px;
+    color: white;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block creator</title>
+  <meta name="title" content="Block Creator">
+  <meta name="description" content="Easily create Blockly blocks using Blockly itself.">
+  <meta name="keywords"
+    content="blockly, block, creator, maker, generator, blocks, blockly block, easy coding, code, coding, javascript, inputs, fields, types, generation, generated, generating code, blockly block generator, easy block maker, easy block creator, blockly block creator, editor, workspace, Blockly, BlockCreation, BlocklyEditor, BlockCustomization, JavaScriptCode, BlockDefinition, BlockFactory, BlocklyWorkspace, CustomBlocks, BlocklyProgramming, BlockProperties, CodeGeneration, BlocklyTools, BlocklyUI, BlockDesign, BlocklyBlocks, BlockSetup, BlockSettings, BlocklyGenerator, BlocklyTutorials, BlocklyGuide, BlocklyInterface, BlocklyDevelopment, BlockConfig, BlocklyPlatform, BlockEditor, BlocklySetup, BlocklyConfig, BlocklyCode, BlocklyProject, BlocklyScripts, BlocklyExamples, BlocklyResources, BlocklyBlocksCreation, BlocklyBlocksDesign, BlocklyBlocksCustomization, BlocklyBlocksEditor, BlocklyBlocksFactory, BlocklyBlocksProgramming, BlocklyBlocksProperties">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 day">
+  <meta name="author" content="ddededodediamante">
+
+
+  <!-- Include Blockly library -->
+  <script src="https://unpkg.com/blockly@11.1.1/blockly.min.js"></script>
+  <script src="https://unpkg.com/blockly@11.1.1/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/@blockly/field-colour-hsv-sliders@5.0.4/dist/index.js"></script>
+
+  <!-- Other libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.11/pako.min.js"></script>
+  <script src="https://kit.fontawesome.com/402ac55d8d.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="buttonContainer">
+    <button onclick="saveFile()">
+      <i class="fa-solid fa-download"></i>Save Block
+    </button>
+    <button onclick="loadFromFile()">
+      <i class="fa-solid fa-upload"></i>Load Block
+    </button>
+  </div>
+
+  <div id="blocklyContainer">
+    <div id="blocklyDiv"></div>
+
+    <div id="generatedCodeBlockly">
+      <h1>Preview:</h1>
+
+      <label for="previewRender" id="previewRenderLabel">Renderer:</label>
+      <select name="previewRender" id="previewRender">
+        <option value="geras">Geras</option>
+        <option value="thrasos">Thrasos</option>
+        <option value="zelos">Zelos</option>
+      </select>
+
+      <div id="blocklyPreviewDiv"></div>
+      <button onclick="downloadPreviewWorkspace(true)">Download block PNG</button>
+      <button onclick="downloadPreviewWorkspace(false)">Download block SVG</button>
+
+      <h1>Generated Code:</h1>
+      <p id="textCode">...</p>
+    </div>
+  </div>
+
+  <xml id="toolbox" style="display: none">
+    <category name="Inputs" colour="#5b80a5">
+      <block type="input_value"></block>
+      <block type="input_statement"></block>
+      <block type="input_dummy"></block>
+      <block type="input_endrow"></block>
+    </category>
+
+    <category name="Fields" colour="#5b9ca5">
+      <block type="field_label"></block>
+      <block type="field_textInput"></block>
+      <block type="field_numericInput"></block>
+      <block type="field_checkbox"></block>
+      <block type="field_variable"></block>
+      <block type="field_dropdown"></block>
+      <block type="field_dropdownChoice"></block>
+    </category>
+
+    <category name="Types" colour="#5ba55b">
+      <block type="lists_create_with"></block>
+      <block type="type_dropdown"></block>
+      <block type="type_dropdown">
+        <field name="DROPDOWN">String</field>
+      </block>
+      <block type="type_dropdown">
+        <field name="DROPDOWN">Number</field>
+      </block>
+      <block type="type_dropdown">
+        <field name="DROPDOWN">Boolean</field>
+      </block>
+      <block type="type_dropdown">
+        <field name="DROPDOWN">Array</field>
+      </block>
+      <block type="type_custom"></block>
+    </category>
+
+    <!-- <category name="yourNameHere" colour="hex color"> -->
+    <!-- <block type="id/type_of_block_here"></block> -->
+    <!-- </category> -->
+
+  </xml>
+
+  <script src="script.js"></script>
+
+  <script src="blocks/main.js"></script>
+  <script src="blocks/inputs.js"></script>
+  <script src="blocks/fields.js"></script>
+  <script src="blocks/types.js"></script>
+
+  <!-- <script src="path to your blocks here"></script>" -->
+</body>
+
+</html>
