@@ -306,10 +306,10 @@ async function downloadPreviewWorkspace(png) {
     }
 
     var bBox = workspace.getBlocksBoundingBox();
-    var x = bBox.x || bBox.left;
-    var y = bBox.y || bBox.top;
-    var width = bBox.width || bBox.right - x;
-    var height = bBox.height || bBox.bottom - y;
+    var x = (bBox.x || bBox.left) - 5;
+    var y = (bBox.y || bBox.top) - 5;
+    var width = (bBox.width || bBox.right - x) + 10;
+    var height = (bBox.height || bBox.bottom - y) + 10;
 
     var blockCanvas = workspace.getCanvas();
     var clone = blockCanvas.cloneNode(true);
