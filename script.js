@@ -298,7 +298,7 @@ async function downloadPreviewWorkspace(png) {
     img.src = data;
   }
 
-  async function workspaceToSvg_(workspace, callback, customCss, pngAfter) {
+  async function workspaceToSvg_(workspace, callback, pngAfter, customCss) {
     // Go through all text areas and set their value.
     var textAreas = document.getElementsByTagName("textarea");
     for (var i = 0; i < textAreas.length; i++) {
