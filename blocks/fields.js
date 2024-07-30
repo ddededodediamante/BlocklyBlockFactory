@@ -134,7 +134,7 @@ Blockly.Blocks['field_dropdown'] = {
 };
 
 javascript.javascriptGenerator.forBlock['field_dropdown'] = function (block, generator) {
-    var code_code = generator.statementToCode(block, 'code');
+    var code_code = generator.statementToCode(block, 'code') || "['', '']";
     var field_name = block.getFieldValue('name');
     var code = `.appendField(new Blockly.FieldDropdown([${code_code}]), '${field_name}')`;
     return code;

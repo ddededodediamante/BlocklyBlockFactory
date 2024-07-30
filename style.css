@@ -7,7 +7,6 @@ body {
     width: 100%;
     font-family: system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial;
     background-color: #333;
-    text-rendering: optimizeSpeed;
 }
 
 @keyframes bouncy {
@@ -108,7 +107,6 @@ body {
     padding: 5px;
 }
 
-
 ::-webkit-scrollbar {
     width: 15px;
     height: 15px;
@@ -168,3 +166,27 @@ body {
     font-size: 16px;
     color: white;
 }
+
+/*
+@media (max-width: 600px) {
+    #generatedCodeBlockly button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 579px) {
+    #blocklyContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #blocklyDiv {
+        min-height: 400px;
+        min-width: 100%;
+    }
+
+    #generatedCodeBlockly {
+        width: calc(100% - 15px);
+        overflow-y: scroll;
+    }
+}/*

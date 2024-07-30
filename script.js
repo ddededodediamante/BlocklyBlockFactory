@@ -29,7 +29,7 @@ const DarkTheme = Blockly.Theme.defineTheme('DarkTheme', {
     toolboxForegroundColour: '#fff',
     flyoutBackgroundColour: '#252526',
     flyoutForegroundColour: '#ccc',
-    flyoutOpacity: 1,
+    flyoutOpacity: 0.8,
     scrollbarColour: '#797979',
     insertionMarkerColour: '#fff',
     insertionMarkerOpacity: 0.3,
@@ -202,6 +202,8 @@ async function updateCode(event) {
   });
 
   document.getElementById("textCode").textContent = code.trim();
+
+  if (event?.type && event.type == 'drag') return
 
   try {
     await previewWorkspace.clear();
