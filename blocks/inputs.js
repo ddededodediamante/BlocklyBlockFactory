@@ -14,7 +14,7 @@ Blockly.Blocks['input_value'] = {
                 ['right', '1']
             ]), 'fieldsPos');
         this.appendValueInput('check')
-            .setCheck('OutputType')
+            .setCheck(["OutputType", "Array"])
             .appendField('set check to');
         this.setPreviousStatement(true, "Input");
         this.setNextStatement(true, "Input");
@@ -52,7 +52,7 @@ Blockly.Blocks['input_statement'] = {
                 ['right', '1']
             ]), 'fieldsPos');
         this.appendValueInput('check')
-            .setCheck('OutputType')
+            .setCheck(["OutputType", "Array"])
             .appendField('set check to');
         this.setPreviousStatement(true, "Input");
         this.setNextStatement(true, "Input");
