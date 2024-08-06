@@ -20,6 +20,7 @@
   <script src="https://unpkg.com/blockly@11.1.1/blockly.min.js"></script>
   <script src="https://unpkg.com/blockly@11.1.1/javascript_compressed.js"></script>
   <script src="https://unpkg.com/@blockly/field-colour-hsv-sliders@5.0.4/dist/index.js"></script>
+  <script src="https://unpkg.com/@blockly/field-colour@5.0.6/dist/index.js"></script>
 
   <!-- Other libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
@@ -97,6 +98,12 @@
       <block type="type_custom"></block>
     </category>
 
+    <category name="Colours" colour="#a5745b">
+      <block type="colour_picker"></block>
+      <block type="colour_picker_hsv"></block>
+      <block type="colour_custom"></block>
+    </category>
+
     <!-- <category name="yourNameHere" colour="hex color"> -->
     <!-- <block type="id/type_of_block_here"></block> -->
     <!-- </category> -->
@@ -105,6 +112,7 @@
 
   <script src="script.js"></script>
 
+  <script src="blocks/colours.js"></script>
   <script src="blocks/main.js"></script>
   <script src="blocks/inputs.js"></script>
   <script src="blocks/fields.js"></script>

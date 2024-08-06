@@ -89,9 +89,9 @@ Blockly.Blocks['main_blockcreator'] = {
     this.appendDummyInput()
       .appendField("set help url to")
       .appendField(new Blockly.FieldTextInput("url"), "HELPURL");
-    this.appendDummyInput()
-      .appendField("set colour to")
-      .appendField(new FieldColourHsvSliders(randomColor()), "COLOUR");
+    this.appendValueInput("COLOUR")
+      .setCheck("Colour")
+      .appendField("set colour to");
     this.setInputsInline(false);
     this.setColour(230);
     this.setTooltip("");
@@ -186,7 +186,7 @@ javascript.javascriptGenerator.forBlock['main_blockcreator'] = function (block, 
   var nextState = generator.valueToCode(block, 'NEXTSTATEMENT', javascript.Order.ATOMIC) || null;
   var tooltip = block.getFieldValue('TOOLTIP');
   var helpurl = block.getFieldValue('HELPURL');
-  var colour = block.getFieldValue('COLOUR');
+  var colour = generator.valueToCode(block, 'COLOUR', javascript.Order.ATOMIC) || null;
   var output = generator.valueToCode(block, 'OUTPUT', javascript.Order.ATOMIC) || null;
 
   window.mainBlockName = name;
@@ -224,3 +224,13 @@ let newBlock = workspace.newBlock('main_blockcreator');
 newBlock.initSvg();
 newBlock.render();
 newBlock.setDeletable(false);
+
+let shadowBlock = workspace.newBlock('colour_picker');
+shadowBlock.initSvg();
+shadowBlock.render();
+shadowBlock.setShadow(true);
+
+let colourInput = newBlock.getInput('COLOUR');
+if (colourInput) {
+  colourInput.connection.connect(shadowBlock.outputConnection);
+}

@@ -167,7 +167,6 @@ body {
     color: white;
 }
 
-/*
 @media (max-width: 600px) {
     #generatedCodeBlockly button {
         font-size: 13px;
@@ -189,4 +188,6 @@ body {
         width: calc(100% - 15px);
         overflow-y: scroll;
     }
-}/*
+}
+
+/*
